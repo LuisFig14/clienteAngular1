@@ -1,0 +1,49 @@
+<app-navigation></app-navigation>
+
+
+    <div class="container">
+        <div class="card-body">
+            <h2 class="text-center">Crea un nuevo vendedor!</h2>
+            <form>
+
+                <div class="form-group row">
+                    <label for="nombre" class="col-form-label col-sm-1">Nombre:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="nombre" [(ngModel)]="vendedor.nombre">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="apellido" class="col-form-label col-sm-1">Apellido:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="apellido" [(ngModel)]="vendedor.apellido">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-form-label col-sm-1">email:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="email" [(ngModel)]="vendedor.email">
+                    </div>
+                </div>
+        
+                <button class="btn btn-success" role="button" (click)="create()" *ngIf="!vendedor.id else elseBlock" >Registrar</button>
+
+                <ng-template #elseBlock >
+                    <button class="btn btn-success" role="button" (click)="update()" >Actualizar</button>
+                </ng-template>
+                
+
+            </form>
+    
+        </div>
+
+    </div>
+  
+
+     
+    <button class="btn btn-info" type="button" [routerLink]="['/vendedor']">Regresar</button>
+
+
+
+

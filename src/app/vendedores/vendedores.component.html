@@ -1,0 +1,37 @@
+<app-navigation></app-navigation>
+    <br>
+  <h4 class="text-center">Tabla de vendedores</h4>
+    <br>
+  <div class="container">
+
+    
+    <br>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Editar</th> <!--Fila editar-->
+          <th scope="col">Eliminar</th> <!--Fila eliminar-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendedor of vendedores">
+
+          <th scope="row">{{vendedor.id}}</th>
+          <td>            {{vendedor.nombre}}</td>
+          <td>            {{vendedor.apellido}}</td>
+          
+          <td><button type="button" name="button" class="btn btn-primary btn-sm" [routerLink]="['/vendedor/form', vendedor.id]" >Editar</button></td>
+          
+          <td><button class="btn btn-danger btn-sm" role="button" (click)="delete(vendedor)" >Eliminar</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="btn btn-info" type="button" [routerLink]="['/vendedor/form']"> Nuevo vendedor</button>
+  </div>
+  
