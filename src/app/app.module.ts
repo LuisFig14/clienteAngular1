@@ -12,18 +12,18 @@ import { FormsModule } from '@angular/forms';
 import { FormvendedorComponent } from './vendedores/formvendedor.component';
 import { Routes, RouterModule} from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NavigationComponent } from './navigation/navigation.component'; //importar para uso de rutas 
+import { NavigationComponent } from './navigation/navigation.component';
+import { ProductosComponent } from './productos/productos.component'; //importar para uso de rutas 
+
 
 const routes:Routes =[
   {path:'', redirectTo:'/', pathMatch:'full'},
   {path:'', component:HomeComponent},
-  //{path:'', redirectTo:'/vendedor', pathMatch:'full'},
   {path:'vendedor', component:VendedoresComponent},
   {path:'vendedor/form', component:FormvendedorComponent},
-  {path:'vendedor/form/:id', component:FormvendedorComponent}
-
+  {path:'vendedor/form/:id', component:FormvendedorComponent},
+  {path:'productos', component:ProductosComponent}
 ]
-
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ const routes:Routes =[
     VendedoresComponent,
     FormvendedorComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,
